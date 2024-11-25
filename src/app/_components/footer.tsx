@@ -15,13 +15,13 @@ export default function Footer() {
     const quickLinks: Array<[string, string]> = [
         ['Home', '/'],
         ['About', '/aboutme'],
-        ['Skills', '/Skills'],
+        ['Stack', '/stack'],
         ['Projects', '/projects'],
         ['Experience', '/experience/travel']
     ]
 
     const resourceLinks: Array<[string, string]> = [
-        ['Blog', '/blog'],
+        ['Blogs', '/blogs'],
         ['Learning Curve', '/learningcurve'],
         ['Testimonials', '/testimonials']
     ]
@@ -38,6 +38,7 @@ export default function Footer() {
     const codingQuotes = useMemo(() => [
         
         "Every programmer is an author.",
+        "A lot to Learn - A lot to Know - A lot to Explore - A lot to Grow",
         "The expert in anything was once a beginner.",
         "Software and cathedrals are much the same – first we build them, then we pray.",
         "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle.",
@@ -89,13 +90,13 @@ export default function Footer() {
     useEffect(() => {
         const randomQuote = codingQuotes[Math.floor(Math.random() * codingQuotes.length)]
         setQuote(randomQuote)
-    }, [])
+    }, [codingQuotes])
 
     return (
-        <footer className="relative  bg-gradient-to-b from-background to-stone-900">
-            <div className="relative max-w-6xl mx-auto px-6 pt-32 pb-20">
-                {/* Main grid with hover effects */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8  max-w-5xl mx-auto border-t pt-6">
+        <footer className="relative bg-gradient-to-b from-background to-stone-900 border-t mt-6">
+            <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-20 ">
+                {/* Main grid with hover effects */} 
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8  max-w-5xl mx-auto pt-6">
                     {/* Quick Links Card */}
                     <div className="group bg-stone-900/50 backdrop-blur-sm rounded-xl p-6 border border-stone-800 hover:border-stone-700 transition-all duration-300">
                         <h3 className="text-stone-200 font-medium mb-6 flex items-center gap-3">
@@ -148,7 +149,7 @@ export default function Footer() {
                     <div className="group bg-stone-900/50 backdrop-blur-sm rounded-xl p-6 border border-stone-800 hover:border-stone-700 transition-all duration-300">
                         <h3 className="text-stone-200 font-medium mb-6 flex items-center gap-3">
                             <div className="h-8 w-1 bg-stone-700 rounded-full" />
-                            Let's Connect
+                            Let&apos;s Connect
                         </h3>
                         <div className="grid grid-cols-1 gap-4">
                             {socialLinks.map(([Icon, label, href]) => (

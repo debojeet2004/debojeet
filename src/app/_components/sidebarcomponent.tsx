@@ -6,7 +6,6 @@ import {
   User,
   Code,
   Briefcase,
-  MessageCircle,
   Instagram,
   Linkedin,
   LineChart,
@@ -52,8 +51,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       },
       {
         type: "normal" as const,
-        title: "Skills",
-        url: "/skills",
+        title: "Stack",
+        url: "/stack",
         icon: Code,
         isFocused: pathname.split("/").pop() === "skills",
       },
