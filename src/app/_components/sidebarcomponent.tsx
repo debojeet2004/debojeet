@@ -10,7 +10,6 @@ import {
   Linkedin,
   LineChart,
   FileText,
-  Star,
   LayoutDashboard,
   Handshake
 } from "lucide-react"
@@ -51,13 +50,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       },
       {
         type: "normal" as const,
-        title: "Stack",
-        url: "/stack",
-        icon: Code,
-        isFocused: pathname.split("/").pop() === "skills",
-      },
-      {
-        type: "normal" as const,
         title: "Projects",
         url: "/projects",
         icon: PieChart,
@@ -91,13 +83,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     resources: [
       {
         type: "normal" as const,
-        title: "Learning Curve",
-        url: "/learningcurve",
-        icon: LineChart,
-        isFocused: pathname.split("/").pop() === "learningcurve",
-      },
-      {
-        type: "normal" as const,
         title: "Blogs",
         url: "/blogs",
         icon: FileText,
@@ -105,10 +90,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       },
       {
         type: "normal" as const,
-        title: "Testimonials",
-        url: "/testimonials",
-        icon: Star,
-        isFocused: pathname.split("/").pop() === "testimonials",
+        title: "Stack",
+        url: "/stack",
+        icon: Code,
+        isFocused: pathname.split("/").pop() === "skills",
+      },
+      {
+        type: "normal" as const,
+        title: "Learning Curve",
+        url: "/learningcurve",
+        icon: LineChart,
+        isFocused: pathname.split("/").pop() === "learningcurve",
       },
     ],
     contact: [
