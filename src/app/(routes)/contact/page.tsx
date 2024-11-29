@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, Calendar, Send, Copy } from "lucide-react"
+import { motion } from "framer-motion"
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -34,7 +35,9 @@ export default function ContactPage() {
     },
   })
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(
+    // values: z.infer<typeof formSchema>
+  ) {
     toast.success("Thank you for reaching out. I'll get back to you soon.")
     form.reset()
   }
@@ -51,52 +54,66 @@ export default function ContactPage() {
   return (
     <div className=" mx-auto px-4 pt-16 max-w-4xl">
       <div className="space-y-8">
-        <div className="space-y-4">
-          <h1 className="text-5xl font-thin tracking-tight">Let's Connect</h1>
+      <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className='space-y-4'
+      >
+          <h1 className="text-5xl font-thin tracking-tight">Let&apos;s Connect</h1>
           <p className="text-muted-foreground text-md">
-            Let's create something remarkable together! Whether you need a sounding board for your ideas or a partner to bring your vision to life, I'm here to lend a helping hand.
+            Let&apos;s create something remarkable together! Whether you need a sounding board for your ideas or a partner to bring your vision to life, I&apos;m here to lend a helping hand.
           </p>
-        </div>
+      </motion.div>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+      >
+        <Card className="bg-stone-900">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Calendar className="h-5 w-5" />
+              Schedule a Call
+            </CardTitle>
+            <CardDescription className="text-stone-400">
+              Book a 30-minute introduction call with me
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button variant="secondary" className="w-full bg-gradient-to-l from-stone-400 to-stone-600">Book a Time</Button>
+          </CardContent>
+        </Card>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="bg-stone-900">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
-                Schedule a Call
-              </CardTitle>
-              <CardDescription className="text-stone-400">
-                Book a 30-minute introduction call with me
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button variant="secondary" className="w-full bg-gradient-to-l from-stone-400 to-stone-600">Book a Time</Button>
-            </CardContent>
-          </Card>
+        <Card className="bg-stone-900">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Mail className="h-5 w-5" />
+              Email Me
+            </CardTitle>
+            <CardDescription className="text-stone-400">
+              Send me an email directly
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button onClick={handleCopy} variant="secondary" className="w-full bg-gradient-to-l from-stone-600 to-stone-800">
+              <Copy /> debojeetkarmakar2020@gmail.com
+            </Button>
+          </CardContent>
+        </Card>
+      </motion.div>
 
-          <Card className="bg-stone-900">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Mail className="h-5 w-5" />
-                Email Me
-              </CardTitle>
-              <CardDescription className="text-stone-400">
-                Send me an email directly
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button onClick={handleCopy} variant="secondary" className="w-full bg-gradient-to-l from-stone-600 to-stone-800">
-                <Copy /> debojeetkarmakar2020@gmail.com
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
         <Card className="bg-stone-900">
           <CardHeader>
             <CardTitle>Send a Message</CardTitle>
             <CardDescription className="text-stone-400">
-              Fill out the form below and I'll get back to you as soon as possible.
+              Fill out the form below and I&apos;ll get back to you as soon as possible.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -162,7 +179,13 @@ export default function ContactPage() {
             </Form>
           </CardContent>
         </Card>
-
+      </motion.div>
+        
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
         <Card className="bg-stone-900">
           <CardHeader>
             <CardTitle>Join 1K+ Readers</CardTitle>
@@ -180,6 +203,8 @@ export default function ContactPage() {
             </form>
           </CardContent>
         </Card>
+      </motion.div>
+        
       </div>
     </div>
   )
