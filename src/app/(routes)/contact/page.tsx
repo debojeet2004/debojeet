@@ -16,7 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Calendar, Send, Copy } from "lucide-react"
+import { Mail, Send, Copy } from "lucide-react"
 import { motion } from "framer-motion"
 
 const formSchema = z.object({
@@ -73,16 +73,19 @@ export default function ContactPage() {
       >
         <Card className="bg-stone-900">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Calendar className="h-5 w-5" />
-              Schedule a Call
-            </CardTitle>
-            <CardDescription className="text-stone-400">
-              Book a 30-minute introduction call with me
+            <CardTitle>Subscribe</CardTitle>
+            <CardDescription>
+              Get notified about new articles and resources. Sent out every two weeks. No spam.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button variant="secondary" className="w-full bg-gradient-to-l from-stone-400 to-stone-600">Book a Time</Button>
+            <form className="flex gap-2">
+              <Input 
+                placeholder="your@email.com" 
+                className = "bg-stone-800"
+                />
+              <Button>Subscribe</Button>
+            </form>
           </CardContent>
         </Card>
 
@@ -97,8 +100,8 @@ export default function ContactPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button onClick={handleCopy} variant="secondary" className="w-full bg-gradient-to-l from-stone-600 to-stone-800">
-              <Copy /> debojeetkarmakar2020@gmail.com
+            <Button onClick={handleCopy} variant="secondary" className="w-full bg-gradient-to-l from-stone-600 to-stone-800 mt-5">
+              <Copy /> Get my Email
             </Button>
           </CardContent>
         </Card>
@@ -180,31 +183,7 @@ export default function ContactPage() {
           </CardContent>
         </Card>
       </motion.div>
-        
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-      >
-        <Card className="bg-stone-900">
-          <CardHeader>
-            <CardTitle>Join 1K+ Readers</CardTitle>
-            <CardDescription>
-              Get notified about new articles and resources. Sent out every two weeks. No spam.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form className="flex gap-2">
-              <Input 
-                placeholder="your@email.com" 
-                className = "bg-stone-800"
-                />
-              <Button>Subscribe</Button>
-            </form>
-          </CardContent>
-        </Card>
-      </motion.div>
-        
+                
       </div>
     </div>
   )
