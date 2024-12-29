@@ -4,7 +4,7 @@ import React from 'react'
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Search, Clock, Calendar } from "lucide-react"
+import { Search, Clock, Calendar, ExternalLink } from "lucide-react"
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -16,7 +16,7 @@ type BlogsType = {
   excerpt: string;
   date: string;
   readTime: string;
-  category: "Life Experience" | "Technology" | "Travell";
+  category: "Life Experience" | "Technology" | "Travell" | "Case Study";
   image: string;
 };
 
@@ -56,7 +56,7 @@ export default function BlogsPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className='space-y-2'
         >
-          <h1 className="text-5xl font-thin tracking-tight">Explore My Blogs</h1>
+          <h1 className="text-5xl font-thin tracking-tight">Featured Blogs</h1>
           <p className="text-muted-foreground">Dive into my latest blog posts for fresh perspectives and insights on technology, life, and more.</p>
         </motion.div>
 
@@ -130,6 +130,38 @@ export default function BlogsPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Medium Blogs Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="bg-gradient-to-br from-stone-500/20 to-transparent rounded-2xl p-8 border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+          <div className="text-center space-y-4">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              Want More Insights?
+            </h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto">
+              Explore a wider range of articles and in-depth discussions on technology, software development, and personal experiences on my Medium profile.
+            </p>
+            <Button 
+              variant="outline" 
+              className="rounded-xl hover:bg-primary/10 transition-colors"
+              asChild
+            >
+              <a 
+                href="https://medium.com/@debojeetkarmakar2004" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <ExternalLink className="w-4 h-4 text-primary" />
+                Visit My Medium 
+              </a>
+            </Button>
           </div>
         </motion.div>
       </div>

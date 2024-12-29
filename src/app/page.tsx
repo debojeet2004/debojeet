@@ -105,7 +105,7 @@ const Projects: ProjectsTypes[] = [
 function Page() {
 
   return (
-    <div>
+    <>
       <div className='max-w-5xl mx-auto mt-36 flex flex-col justify-center items-center '>
         {/* <SidebarTrigger className="-ml-1" /> */}
         <div className={cn("group rounded-full border border-black/10 bg-white/10 backdrop-blur-md text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-white/20 dark:border-white/10 dark:bg-stone-700/10 dark:hover:bg-stone-700/20",)}>
@@ -155,11 +155,12 @@ function Page() {
                   <div className="max-w-[30rem] rounded-xl overflow-hidden bg-gradient-to-br from-stone-950 to-stone-800 text-white shadow-lg transition-transform duration-300 group hover:scale-105">
                     <div className="relative h-48">
                       <Image
-                        src={Project.image}
-                        alt="Earth and planets"
-                        layout="fill"
-                        objectFit="cover"
-                        className="transition-transform duration-300 group-hover:-translate-y-4 group-hover:scale-105"
+                        src={Project.image} 
+                        alt={`${Project.id} screenshot`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover"
+                        priority={Project.id === 1}  // Only prioritize the first image
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-stone-900 to-transparent" />
                       {/* <h2 className="absolute bottom-4 left-4 text-4xl font-bold">Earth</h2> */}
@@ -206,7 +207,7 @@ function Page() {
         <AnimatedTestimonials testimonials={testimonials} />
       </div>
       <Footer/>
-    </div>
+    </>
   )};
 
 

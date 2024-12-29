@@ -1,20 +1,15 @@
 'use client'
-
-import { useState } from 'react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
-// import Image from 'next/image'
+import Image from 'next/image'
 
 export default function AboutPage() {
-  const [email, setEmail] = useState('')
 
   const thoughts = [
-    { title: 'Productive Use Design Skills', category: 'Design', icon: '✏️' },
-    { title: 'Freelancing in Digital Design', category: 'Business', icon: '💼' },
-    { title: 'Designing for Shareability', category: 'Design', icon: '🔄' },
-    { title: 'The Evolution of Digital Design', category: 'Design', icon: '🎨' },
+    { title: 'Exploring New Technologies', category: 'Tech', icon: '🚀' },
+    { title: 'Digital Art & Creativity', category: 'Design', icon: '🎨' },
+    { title: 'Remote Work Adventures', category: 'Travel', icon: '✈️' },
+    { title: 'UI/UX Innovation', category: 'Design', icon: '📱' },
   ]
 
   return (
@@ -27,10 +22,16 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-6xl font-thin text-white mb-8">About Me</h1>
-          <p className="text-lg leading-relaxed text-justify">
-          A Computer Science student, weaving dreams in AI-ML. From Dhanbad&apos;s quiet lanes to West Bengal&apos;s the city of Joy, 
-          I journey with art in my heart and code in my hands. Sketching my future, eager to learn, grow, and explore the vast canvas of life.
-          </p>
+            <p className="text-lg leading-relaxed text-justify">
+            In the digital realm where dreams take flight,
+            A seeker of knowledge, coding day and night.
+            From AI&apos;s depths to ML&apos;s embrace,
+            Creating solutions with artistic grace.
+            A designer&apos;s soul in a developer&apos;s mind,
+            Weaving future&apos;s tapestry, one line at a time.
+            Through circuits and pixels, my journey flows,
+            As innovation&apos;s flame eternally glows.
+            </p>
         </motion.div>
 
         {/* Profile Image */}
@@ -38,15 +39,15 @@ export default function AboutPage() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative aspect-[16/9] overflow-hidden rounded-lg p-1 border border-stone-600"
+          className="relative aspect-[16/9] overflow-hidden rounded-lg"
         >
-          {/* <Image
-            src="/placeholder.svg?height=600&width=800"
+          <Image
+            src="/debojeet.jpg"
             alt="Profile"
             width={800}
             height={440}
             className="object-cover border"
-          /> */}
+          />
         </motion.div>
 
         {/* Description */}
@@ -56,18 +57,12 @@ export default function AboutPage() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="space-y-6"
         >
-          <p className="text-md leading-relaxed text-justify">
-            I am Debojeet, a 4th-year Computer Science student specializing in AI-ML, currently interning as a Fullstack Developer at HyrecruitAi, 
-            an AI-powered interview platform. Originally from Dhanbad, Jharkhand, I have always been passionate about art, thanks to my mom&apos;s support.
-            In 2021, I moved to West Bengal for my B.Tech, marking a significant transition in my life. This experience has taught me the importance of 
-            balancing creativity with technical skills, which I apply in my current role.
+          <p className="text-lg leading-relaxed text-justify">
+          I&apos;m Debojeet Karmakar, a Computer Science student with a specialization in Artificial Intelligence and Machine Learning. I&apos;m passionate about technology and its potential to shape the future. I&apos;m particularly drawn to the intersection of technology and design, and I enjoy the process of designing, developing, and bringing innovative digital experiences to life. I&apos;m a UI/UX Designer and a Full-stack Developer, constantly seeking to enhance my skills and explore new technologies.
           </p>
-          <p className="text-md leading-relaxed text-justify">
-            As I navigate my final year, I am focused on gaining practical experience and building a strong personal brand. My internship has provided 
-            valuable insights into the tech industry, and I am eager to leverage this knowledge in future projects. I am also exploring personal initiatives 
-            like starting a YouTube channel and a blog to document my journey and share my learnings. My goal is to create impactful digital solutions and continue 
-            growing both personally and professionally.
-            <span className='text-red-400'>have to change this  thsi is not final remberber ok </span>
+          <p className="text-lg leading-relaxed text-justify">
+          My journey in higher education has been a period of significant personal and academic growth. I&apos;ve embraced challenges, sought out new experiences, and developed a strong work ethic. I&apos;m driven to succeed in my academic pursuits and build a meaningful career in the tech industry.<br/><br/>
+          I&apos;m a proactive and results-oriented individual with a strong desire to learn and grow. I&apos;m eager to contribute my skills and knowledge to impactful projects and make a positive impact on the world.
           </p>
         </motion.div>
 
@@ -94,29 +89,8 @@ export default function AboutPage() {
             ))}
           </div>
         </motion.div>
-
-        {/* Newsletter Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="bg-stone-900 p-6 rounded-lg border border-zinc-800"
-        >
-          <h3 className="text-xl font-semibold text-white mb-2">Join 10k+ Readers</h3>
-          <p className="text-sm text-zinc-500 mb-4">Stay up to date with the latest insights. No spam.</p>
-          <div className="flex gap-3">
-            <Input
-              type="email"
-              placeholder="Your E-Mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-zinc-800 border-zinc-700 text-white"
-            />
-            <Button variant="default">Subscribe</Button>
-          </div>
-        </motion.div>
       </div>
     </div>
+
   )
 }
-

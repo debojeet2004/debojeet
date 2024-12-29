@@ -8,7 +8,6 @@ import {
   Briefcase,
   Instagram,
   Linkedin,
-  LineChart,
   FileText,
   LayoutDashboard,
   Handshake
@@ -63,7 +62,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         isActive: true,
         items: [
           {
-            title: "Academic",
+            title: "Education",
             url: "/experience/academic",
             isFocused: pathname.split("/").pop() === "academic",
           },
@@ -71,11 +70,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             title: "Work",
             url: "/experience/work",
             isFocused: pathname.split("/").pop() === "work",
-          },
-          {
-            title: "Travel",
-            url: "/experience/travel",
-            isFocused: pathname.split("/").pop() === "travel",
           },
         ],
       },
@@ -94,13 +88,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         url: "/stack",
         icon: Code,
         isFocused: pathname.split("/").pop() === "skills",
-      },
-      {
-        type: "normal" as const,
-        title: "Learning Curve",
-        url: "/learningcurve",
-        icon: LineChart,
-        isFocused: pathname.split("/").pop() === "learningcurve",
       },
     ],
     contact: [
