@@ -5,26 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
-
-interface ProjectDetailsProps {
-    project: {
-        name: string;
-        description: string;
-        images: string[];
-        techStack: string[];
-        caseStudy: {
-            challenge: string;
-            solution: string;
-            outcome: string;
-        };
-        deployedUrl: string;
-        githubUrl: string;
-        startDate: string; // Format: "JAN 2024"
-        endDate: string | "Ongoing"; // Format: "MAR 2024" or "Ongoing"
-    };
-}
-
-export default function ProjectDetails({ project }: ProjectDetailsProps) {
+import { ProjectDetailsProps } from '../../data/projectData';
+export default function ProjectDetails({ project }: { project: ProjectDetailsProps }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +14,7 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
             className="max-w-5xl mx-auto px-4 py-8"
         >
             <ProjectHeader
-                name={project.name}
+                name={project.title}
                 deployedUrl={project.deployedUrl}
                 githubUrl={project.githubUrl}
                 startDate={project.startDate}
@@ -41,11 +23,11 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
 
             {/* Image Gallery */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                {project.images.map((image, index) => (
+                {project.images && project.images.map((image, index: number) => (
                     <div key={index} className="relative aspect-video rounded-lg overflow-hidden">
                         <Image
                             src={image}
-                            alt={`${project.name} screenshot ${index + 1}`}
+                            alt={`${project.title} screenshot ${index + 1}`}
                             fill
                             className="object-cover"
                         />
@@ -57,7 +39,7 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
             <div className="mb-12">
                 <h2 className="text-2xl font-semibold mb-4">Technologies Used</h2>
                 <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, index) => (
+                    {project.techStack?.map((tech:string, index:number) => (
                         <Badge key={index} variant="secondary">
                             {tech}
                         </Badge>
@@ -103,7 +85,6 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
         </motion.div>
     );
 }
-
 
 
 interface ProjectHeaderProps {

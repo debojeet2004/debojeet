@@ -4,20 +4,9 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { CalendarDays, Clock, Tag } from 'lucide-react';
+import {BlogPostProps} from '../../data/blogData';
 
-interface BlogPostProps {
-  post: {
-    title: string;
-    date: string;
-    readingTime: string;
-    tags: string[];
-    category: string; // Added casestudy field
-    content: string;
-    coverImage: string;
-  };
-}
-
-export function BlogPost({ post }: BlogPostProps) {
+export function Blogposts({ blogpost }: { blogpost: BlogPostProps }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -26,30 +15,32 @@ export function BlogPost({ post }: BlogPostProps) {
     >
       {/* Header */}
       <div className="space-y-6 mb-12">
-        <div className="relative w-full mb-12 rounded-lg overflow-hidden bg-gray-200/20 h-[200px]"/>
-        
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight">{post.title}</h1>
+        <div className="relative w-full mb-12 rounded-lg overflow-hidden bg-gray-200/20 h-[200px]" />
+
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          {blogpost.title}
+        </h1>
         <div className="flex flex-wrap gap-4 text-muted-foreground">
           <div className="flex items-center gap-2">
-            {post.category && (
+            {blogpost.category && (
               <div className="flex items-center gap-2">
-              <span className="text-sm">Category: {post.category}</span>
+                <span className="text-sm">Category: {blogpost.category}</span>
               </div>
             )}
           </div>
           <div className="flex items-center gap-2">
             <CalendarDays className="w-4 h-4" />
-            <span>{post.date}</span>
+            <span>{blogpost.date}</span>
           </div>
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4" />
-            <span>{post.readingTime} read</span>
+            <span>{blogpost.readingTime} read</span>
           </div>
         </div>
 
         <div className="space-y-4">
           <div className="flex flex-wrap gap-2">
-            {post.tags.map((tags) => (
+            {blogpost.tags.map((tags) => (
               <Badge key={tags} variant="secondary">
                 <Tag className="w-3 h-3 mr-1" />
                 {tags}
@@ -57,30 +48,41 @@ export function BlogPost({ post }: BlogPostProps) {
             ))}
           </div>
         </div>
-
-
       </div>
 
       {/* Content */}
-      <article className="prose prose-lg dark:prose-invert max-w-none flex flex-col gap-6">
+      <div className="prose prose-lg dark:prose-invert max-w-none flex flex-col gap-6">
         <div className="w-full mx-auto">
-          {post.content}
+            {blogpost.content.map((content, index) => (
+            <div key={index} className="space-y-8 mb-12">
+              {content.img1 && (
+              <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                <Image
+                src={content.img1}
+                alt={blogpost.title}
+                fill
+                className="object-cover"
+                priority={index === 0}
+                />
+              </div>
+              )}
+              <div className="space-y-4 text-lg leading-relaxed">
+              <p className="text-gray-800 dark:text-gray-200">{content.paragraph}</p>
+              </div>
+              {content.img2 && (
+              <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+                <Image
+                src={content.img2}
+                alt={blogpost.title}
+                fill
+                className="object-cover"
+                />
+              </div>
+              )}
+            </div>
+          ))}
         </div>
-        <div className="relative rounded-lg overflow-hidden">
-          <Image
-            src={post.coverImage}
-            alt="Blog cover"
-            width={1920}
-            height={1080}
-            className="object-contain w-full h-auto"
-            priority
-          />
-        </div>
-        <div className="w-full mx-auto">
-          {post.content}
-        </div>
-      </article>
-
+      </div>
     </motion.div>
   );
 }

@@ -15,15 +15,14 @@ export default function Footer() {
     const quickLinks: Array<[string, string]> = [
         ['Home', '/'],
         ['About', '/aboutme'],
-        ['Stack', '/stack'],
         ['Projects', '/projects'],
-        ['Experience', '/experience/travel']
+        ['Education', '/experience/academic'],
+        ['Work Experience', '/experience/work']
     ]
 
     const resourceLinks: Array<[string, string]> = [
         ['Blogs', '/blogs'],
-        ['Learning Curve', '/learningcurve'],
-        ['Testimonials', '/testimonials']
+        ['Stack', '/stack'],
     ]
 
     const socialLinks: SocialLink[] = [
@@ -61,7 +60,6 @@ export default function Footer() {
         "Every great developer you know got there by solving problems they were unqualified to solve until they actually did it."
     ], [])
 
-    // Optimize time update interval
     useEffect(() => {
         const updateTime = () => {
             const now = new Date()
