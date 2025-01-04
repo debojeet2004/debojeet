@@ -12,11 +12,11 @@ export default function BlogPageRenderer() {
         // Safely extract the slug from the dynamic route
         if (params.blogsid && params.blogsid.length > 0) {
             const slug = params.blogsid[params.blogsid.length - 1];
-            console.log(slug)
+            console.log("slug",slug)
 
             // Find the corresponding blog post
             const foundBlogPost = blogData.find(blog => blog.slug === slug);
-            console.log(foundBlogPost)
+            console.log("foundBlogPost",foundBlogPost)
 
             // Update state
             setBlogPost(foundBlogPost || null);
@@ -24,9 +24,9 @@ export default function BlogPageRenderer() {
     }, [params]);
 
     // Handle loading state
-    if (!blogPost) {
-        return <div>Loading...</div>;
-    }
+    // if (!blogPost) {
+    //     return <div>Loading...</div>;
+    // }
     if (!blogPost) {
         return <div>Blog not found</div>;
     }

@@ -56,7 +56,7 @@ export function Blogposts({ blogpost }: { blogpost: BlogPostProps }) {
             {blogpost.content.map((content, index) => (
             <div key={index} className="space-y-8 mb-12">
               {content.img1 && (
-              <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+              <div className="relative w-full min-h-[700px] rounded-lg overflow-hidden">
                 <Image
                 src={content.img1}
                 alt={blogpost.title}
@@ -70,7 +70,7 @@ export function Blogposts({ blogpost }: { blogpost: BlogPostProps }) {
               <p className="text-gray-800 dark:text-gray-200">{content.paragraph}</p>
               </div>
               {content.img2 && (
-              <div className="relative w-full h-[500px] rounded-lg overflow-hidden">
+              <div className="relative w-full min-h-[700px] rounded-lg overflow-hidden">
                 <Image
                 src={content.img2}
                 alt={blogpost.title}

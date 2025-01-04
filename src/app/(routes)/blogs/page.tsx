@@ -11,12 +11,18 @@ import { motion } from 'framer-motion'
 import {blogData} from './data/blogData'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
+const PREDEFINED_CATEGORIES = [
+  'Life Experience', 
+  'Technology', 
+  'Travel', 
+]
+
 export default function BlogsPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
 
   // Get unique categories
-  const categories = [...new Set(blogData.map(blog => blog.category))]
+  const existingCategories = [...new Set(blogData.map(blog => blog.category))]
 
   // Filter blogs based on search query and selected category
   const filteredBlogs = blogData.filter(blog => 
@@ -31,22 +37,25 @@ export default function BlogsPage() {
     <div className="max-w-5xl mx-auto px-4 py-8">
       <div className="flex flex-col gap-6">
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className='space-y-2'
+          className="space-y-2"
         >
           <h1 className="text-5xl font-thin tracking-tight">Featured Blogs</h1>
-          <p className="text-muted-foreground">Dive into my latest blog posts for fresh perspectives and insights on technology, life, and more.</p>
+          <p className="text-muted-foreground">
+            Dive into my latest blog posts for fresh perspectives and insights
+            on technology, life, and more.
+          </p>
         </motion.div>
 
         {/* Search and Filter */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className='space-y-2 flex items-center gap-4 w-full'
+          className="space-y-2 flex items-center gap-4 w-full"
         >
           <div className="relative flex-grow">
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -58,44 +67,56 @@ export default function BlogsPage() {
             />
           </div>
 
-          <Select 
-            value={selectedCategory} 
-            onValueChange={setSelectedCategory}
-          >
+          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Select Category" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All Categories</SelectItem>
-              {categories.map((category) => (
-                <SelectItem key={category} value={category}>
-                  {category}
+              {PREDEFINED_CATEGORIES.map((category) => (
+                <SelectItem
+                  key={category}
+                  value={category}
+                  disabled={!existingCategories.includes(category)}
+                >
+                  {category}{" "}
+                  <span className="italic text-[0.5rem]">
+                    {!existingCategories.includes(category) ? "No data" : ""}
+                  </span>
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
         </motion.div>
 
-
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className='space-y-2'
+          className="space-y-2"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredBlogs.map((blog) => (
-              <Card key={blog.id} className="group hover:shadow-lg transition-all duration-300 bg-stone-950">
-                <div className="aspect-video relative overflow-hidden rounded-t-lg">
-                  <Image
-                    src={blog.coverImage}
-                    alt={blog.title}
-                    width={200}
-                    height={180}
-                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                  />
+            {filteredBlogs.map((blog) => (
+              <Card
+                key={blog.id}
+                className="group hover:shadow-lg transition-all duration-300 bg-stone-950"
+              >
+                <div className="bg-gradient-to-br from-stone-400 to-stone-800 aspect-video relative overflow-hidden rounded-t-lg">
+                  {blog.coverImage && (
+                    <Image
+                      src={blog.coverImage}
+                      alt={blog.title}
+                      width={200}
+                      height={180}
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    />
+                  )}
                   <div className="absolute top-2 right-2">
-                    <Button variant="secondary" size="sm" className='rounded-xl px-6'>
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      className="rounded-xl px-6"
+                    >
                       {blog.category}
                     </Button>
                   </div>
@@ -116,8 +137,10 @@ export default function BlogsPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className='w-full flex flex-col justify-center items-start'>
-                    <p className="text-muted-foreground line-clamp-2">{blog.content[0].paragraph}</p>
+                  <div className="w-full flex flex-col justify-center items-start">
+                    <p className="text-muted-foreground line-clamp-2">
+                      {blog.content[0].paragraph}
+                    </p>
                     <Link href={`/blogs/${blog.slug}`}>
                       <Button variant="link" className="mt-4 p-0">
                         Read more →
@@ -142,26 +165,28 @@ export default function BlogsPage() {
               Want More Insights?
             </h2>
             <p className="text-foreground/70 max-w-2xl mx-auto">
-              Explore a wider range of articles and in-depth discussions on technology, software development, and personal experiences on my Medium profile.
+              Explore a wider range of articles and in-depth discussions on
+              technology, software development, and personal experiences on my
+              Medium profile.
             </p>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="rounded-xl hover:bg-primary/10 transition-colors"
               asChild
             >
-              <a 
-                href="https://medium.com/@debojeetkarmakar2004" 
-                target="_blank" 
+              <a
+                href="https://medium.com/@debojeetkarmakar2004"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
                 <ExternalLink className="w-4 h-4 text-primary" />
-                Visit My Medium 
+                Visit My Medium
               </a>
             </Button>
           </div>
         </motion.div>
       </div>
     </div>
-  )
+  );
 }

@@ -21,95 +21,49 @@ export interface ProjectDetailsProps {
 export const projectsData: ProjectDetailsProps[] = [
     {
         id: 3,
-        slug: 'smart-task-manager',
-        title: 'Smart Task Manager',
-        description: 'An AI-powered task management system with intelligent prioritization and team collaboration features.',
-        thumbnail: 'https://plus.unsplash.com/premium_photo-1680883415362-238794b19dde?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWVzdGhldGljfGVufDB8fDB8fHww',
+        slug: 'lets-meet-app',
+        title: 'Lets Meet App',
+        description: 'Lets Meet" is a real-time video conferencing application developed using Stream SDKs, offering a feature set comparable to industry leaders like Zoom and Google Meet. Key features include seamless multi-user video and audio communication, screen sharing, personal meeting rooms, emoji reactions, and support for multiple users within a single meeting room.',
+        thumbnail: 'https://xclbyllpejfphiformqq.supabase.co/storage/v1/object/sign/portfolio_storage_bucket/Projects/letsmeetimg1.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwb3J0Zm9saW9fc3RvcmFnZV9idWNrZXQvUHJvamVjdHMvbGV0c21lZXRpbWcxLnBuZyIsImlhdCI6MTczNTk5MjQwMywiZXhwIjoyMDUxMzUyNDAzfQ.n0YCOfL4BX1cm8Z3xXnhkDKZHBejp9ClNROCbJSqNwA&t=2025-01-04T12%3A06%3A43.932Z',
         images: [
-            "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-            "https://images.unsplash.com/photo-1531403009284-440f080d1e12",
-            "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
-            "https://images.unsplash.com/photo-1531545514256-b1400bc00f31"
+            "https://xclbyllpejfphiformqq.supabase.co/storage/v1/object/sign/portfolio_storage_bucket/Projects/letsmeetimg1.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwb3J0Zm9saW9fc3RvcmFnZV9idWNrZXQvUHJvamVjdHMvbGV0c21lZXRpbWcxLnBuZyIsImlhdCI6MTczNTk5MjQwMywiZXhwIjoyMDUxMzUyNDAzfQ.n0YCOfL4BX1cm8Z3xXnhkDKZHBejp9ClNROCbJSqNwA&t=2025-01-04T12%3A06%3A43.932Z",
+            "https://xclbyllpejfphiformqq.supabase.co/storage/v1/object/sign/portfolio_storage_bucket/Projects/personalroomletsmeetimage2.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwb3J0Zm9saW9fc3RvcmFnZV9idWNrZXQvUHJvamVjdHMvcGVyc29uYWxyb29tbGV0c21lZXRpbWFnZTIucG5nIiwiaWF0IjoxNzM1OTkyNDY1LCJleHAiOjIwNTEzNTI0NjV9.qNn0z3tfXXlhJuL_OmHpkEwphm2Lle6MDa4sC9RryzY&t=2025-01-04T12%3A07%3A46.033Z",
+            "https://xclbyllpejfphiformqq.supabase.co/storage/v1/object/sign/portfolio_storage_bucket/Projects/letsmeetimage3.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwb3J0Zm9saW9fc3RvcmFnZV9idWNrZXQvUHJvamVjdHMvbGV0c21lZXRpbWFnZTMucG5nIiwiaWF0IjoxNzM1OTkyNDg0LCJleHAiOjIwNTEzNTI0ODR9.hF6KM5_T9qh4DKrxFaPFKq2SMjOfH-HmssUXNfz0neU&t=2025-01-04T12%3A08%3A04.880Z",
+            "https://xclbyllpejfphiformqq.supabase.co/storage/v1/object/sign/portfolio_storage_bucket/Projects/letsmeetimage4.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwb3J0Zm9saW9fc3RvcmFnZV9idWNrZXQvUHJvamVjdHMvbGV0c21lZXRpbWFnZTQucG5nIiwiaWF0IjoxNzM1OTkyNTA2LCJleHAiOjIwNTEzNTI1MDZ9.bTp7Agvh4vs3BX-K0G2aZIgUfJbQfCw1y535vcqCC_c&t=2025-01-04T12%3A08%3A26.772Z"
         ],
-        techStack: ['Vue.js', 'Express', 'PostgreSQL', 'Redis', 'AWS'],
+        techStack: ['React JS', 'Next Js', 'Javascript', 'TailwindCss' ,'PostgreSQL', 'TailwindCss', 'clerk' , 'stream SDKs' ,'Github'],
         caseStudy: {
-            challenge: 'Developing an intuitive task management system that learns from user behavior.',
-            solution: 'Built a machine learning model to analyze task patterns and suggest optimal workflows.',
-            outcome: 'Improved team productivity by 35% and reduced task completion time.'
+            challenge: 'Several challenges were encountered during the development of "Lets Meet." Ensuring smooth and synchronized audio and video streams across multiple participants while minimizing latency and jitter was crucial. Maintaining high performance and scalability under heavy load, with a large number of concurrent users, presented another significant hurdle. Implementing secure and reliable screen sharing functionality while minimizing performance impact on the sharing user posed another challenge. Finally, designing an intuitive and user-friendly interface for seamless meeting navigation, screen sharing, and participant management was essential for a positive user experience.',
+            solution: 'These challenges were addressed through a combination of strategic approaches. To ensure high-quality and low-latency video and audio experiences, the development team leveraged the robust real-time communication capabilities of Stream SDKs, which include optimized codecs and adaptive bitrate streaming. To maintain high performance under heavy load, efficient server-side infrastructure was implemented, and client-side rendering was optimized. Secure and reliable screen sharing functionality was achieved by utilizing Stream SDKs secure screen sharing capabilities and optimizing screen encoding/decoding algorithms. Finally, an intuitive and user-friendly interface was developed by prioritizing user-centered design principles, conducting thorough user testing, and iteratively refining the UI/UX.',
+            outcome: 'The successful development and deployment of "Lets Meet" have yielded several positive outcomes. The application provides users with a powerful tool for remote communication and collaboration, enhancing productivity and efficiency. By delivering a high-quality user experience with smooth video and audio streams, reliable screen sharing, and intuitive controls, "Lets Meet" has significantly improved remote communication and collaboration capabilities. Moreover, this project has provided valuable learning experiences in real-time communication technologies, video/audio processing, UI/UX design, and software development best practices.'
         },
-        deployedUrl: 'https://smart-task-manager.cloud',
-        githubUrl: 'https://github.com/username/smart-task-manager',
-        startDate: 'OCT 2023',
-        endDate: 'DEC 2023'
+        deployedUrl: 'https://lets-meet-rust.vercel.app',
+        githubUrl: 'https://github.com/debojeet2004/LetsMeet',
+        startDate: 'DEC 2023',
+        endDate: 'JAN 2024'
     },
-    {
-        id: 4,
-        slug: 'healthcare-management-system',
-        title: 'Healthcare Management System',
-        description: 'A comprehensive platform for managing patient records, appointments, and medical services.',
-        thumbnail: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        images: [
-            "https://images.unsplash.com/photo-1579684385752-f0f9dade43d4",
-            "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b",
-            "https://images.unsplash.com/photo-1505751172876-0cc1a7d5e8b4",
-            "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7"
-        ],
-        techStack: ['Next.js', 'PostgreSQL', 'GraphQL', 'TypeScript', 'Prisma'],
-        caseStudy: {
-            challenge: 'Developing a secure and efficient healthcare management solution.',
-            solution: 'Created a HIPAA-compliant system with robust patient data management.',
-            outcome: 'Improved healthcare provider efficiency and patient care coordination.'
-        },
-        deployedUrl: 'https://healthcare-management.app',
-        githubUrl: 'https://github.com/debojeet2004/healthcare-management-system',
-        startDate: 'AUG 2023',
-        endDate: 'NOV 2023'
-    },
-    {
-        id: 5,
-        slug: 'ai-content-generator',
-        title: 'AI Content Generator',
-        description: 'An advanced AI-powered platform for generating creative and contextually relevant content across various domains.',
-        thumbnail: 'https://plus.unsplash.com/premium_photo-1680883415362-238794b19dde?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWVzdGhldGljfGVufDB8fDB8fHww',
-        images: [
-            "https://images.unsplash.com/photo-1516737490857-848138dace26",
-            "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-            "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
-            "https://images.unsplash.com/photo-1522542550221-31fd19575a2d"
-        ],
-        techStack: ['Python', 'OpenAI', 'React', 'Django', 'GPT-3'],
-        caseStudy: {
-            challenge: 'Creating an AI tool that generates high-quality, original content with minimal human intervention.',
-            solution: 'Developed a sophisticated AI model using advanced natural language processing techniques.',
-            outcome: 'Reduced content creation time by 70% while maintaining high-quality output.'
-        },
-        deployedUrl: 'https://ai-content-generator.app',
-        githubUrl: 'https://github.com/username/ai-content-generator',
-        startDate: 'JAN 2024',
-        endDate: 'Ongoing'
-    },
-    {
-        id: 6,
-        slug: 'e-learning-platform',
-        title: 'Interactive E-Learning Platform',
-        description: 'A comprehensive online learning ecosystem with personalized learning paths and interactive course modules.',
-        thumbnail: 'https://plus.unsplash.com/premium_photo-1680883415362-238794b19dde?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWVzdGhldGljfGVufDB8fDB8fHww',
-        images: [
-            "https://images.unsplash.com/photo-1501504905252-473c47ba9ddc",
-            "https://images.unsplash.com/photo-1517842645767-c639042777db",
-            "https://images.unsplash.com/photo-1488521787991-ed70c0a2e7b2",
-            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
-        ],
-        techStack: ['React', 'Node.js', 'MongoDB', 'WebRTC', 'Socket.io'],
-        caseStudy: {
-            challenge: 'Creating an engaging and adaptive online learning experience.',
-            solution: 'Implemented machine learning algorithms to personalize learning paths and content recommendation.',
-            outcome: 'Increased student engagement by 50% and improved learning outcomes.'
-        },
-        deployedUrl: 'https://interactive-learning.platform',
-        githubUrl: 'https://github.com/username/e-learning-platform',
-        startDate: 'NOV 2023',
-        endDate: 'FEB 2024'
-    }
+    // {
+    //     id: 2,
+    //     slug: 'safehealth',
+    //     title: 'SafeHealth',
+    //     description: 'A comprehensive platform for managing patient records, appointments, and medical services.',
+    //     thumbnail: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    //     images: [
+    //         "https://images.unsplash.com/photo-1579684385752-f0f9dade43d4",
+    //         "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b",
+    //         "https://images.unsplash.com/photo-1505751172876-0cc1a7d5e8b4",
+    //         "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7"
+    //     ],
+    //     techStack: ['Next.js', 'PostgreSQL', 'GraphQL', 'TypeScript', 'Prisma'],
+    //     caseStudy: {
+    //         challenge: 'Developing a secure and efficient healthcare management solution.',
+    //         solution: 'Created a HIPAA-compliant system with robust patient data management.',
+    //         outcome: 'Improved healthcare provider efficiency and patient care coordination.'
+    //     },
+    //     deployedUrl: 'https://healthcare-management.app',
+    //     githubUrl: 'https://github.com/debojeet2004/healthcare-management-system',
+    //     startDate: 'AUG 2023',
+    //     endDate: 'NOV 2023'
+    // },
 ];
 
