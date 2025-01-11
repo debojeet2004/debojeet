@@ -147,6 +147,7 @@ export default function Footer() {
                     <div className="group bg-stone-900/50 backdrop-blur-sm rounded-xl p-6 border border-stone-800 hover:border-stone-700 transition-all duration-300">
                         <h3 className="text-stone-200 font-medium mb-6 flex items-center gap-3">
                             <div className="h-8 w-1 bg-stone-700 rounded-full" />
+
                             Let&apos;s Connect
                         </h3>
                         <div className="grid grid-cols-1 gap-4">
@@ -167,13 +168,12 @@ export default function Footer() {
                 </div>
 
                 {/* Creative time display */}
-                <div className="mt-16 mb-16 max-w-5xl mx-auto">
-                    <div className="w-full bg-gradient-to-br from-stone-900/50 to-stone-800/30 backdrop-blur-sm rounded-2xl p-8 border border-stone-800 hover:border-stone-600 transition-all duration-500 group hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)]">
+                <div className="mt-16 mb-16 max-w-5xl mx-auto px-4 sm:px-6">
+                    <div className="w-full bg-gradient-to-br from-stone-900/50 to-stone-800/30 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-stone-800 hover:border-stone-600 transition-all duration-500 group hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)]">
                         <div className="relative">                            
-                            {/* Updated layout */}
-                            <div className="relative flex justify-between items-center  ">
+                            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
                                 {/* Left side: Quote and Status */}
-                                <div className="flex flex-col justify-end items-start  h-full gap-4">
+                                <div className="flex flex-col justify-end items-start gap-4 w-full lg:w-auto">
                                     <div className={`flex items-center gap-2 ${status === 'working' ? 'text-green-400' : 'text-yellow-400'}`}>
                                         <span className={`w-2 h-2 rounded-full ${status === 'working' ? 'bg-green-400' : 'bg-yellow-400'} animate-pulse`} />
                                         <span className="text-sm font-medium">
@@ -185,9 +185,9 @@ export default function Footer() {
                                     </p>
                                 </div>
                                 {/* Right side: Time */}
-                                <div className="flex flex-col items-end gap-2"> 
+                                <div className="flex flex-col items-center border md:border-none border-stone-500/30 p-2 rounded-md  lg:items-end gap-2 w-full lg:w-auto"> 
                                     <span className="flex items-center gap-2 text-stone-400 opacity-60 text-sm uppercase tracking-wider">IST (India)</span>
-                                    <span className=" text-8xl font-light text-transparent bg-clip-text bg-gradient-to-r from-stone-300 to-stone-500 tracking-tight ">
+                                    <span className="text-6xl sm:text-6xl lg:text-8xl font-light text-transparent bg-clip-text bg-gradient-to-r from-stone-300 to-stone-500 tracking-tight">
                                         {time}
                                     </span>
                                 </div>

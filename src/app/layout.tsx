@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { SidebarInset } from "@/components/ui/sidebar";
+import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "./_components/sidebarcomponent";
 import "./globals.css";
@@ -32,8 +32,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SidebarProvider>
-          <AppSidebar/>
-          <SidebarInset>{children}</SidebarInset>
+          <AppSidebar />
+          <div className="flex flex-col w-full">
+            <div className = ' p-4 md:hidden'>
+              <SidebarTrigger className="-ml-1" />
+            </div>
+            <SidebarInset>{children}</SidebarInset>
+          </div>
         </SidebarProvider>  
       </body>
     </html>

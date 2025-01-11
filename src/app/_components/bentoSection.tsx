@@ -70,7 +70,7 @@ function BentoSection() {
                 {/* RIGHT SECTION */}
                 <div className='w-full md:w-[34%] h-full flex flex-col justify-between items-center'>
                 {/* BOX 2 */}
-                <div className='relative cursor-pointer w-full h-[48%] rounded-lg  border-stone-700 transition-transform duration-300 hover:scale-105'>
+                <div className='relative cursor-pointer w-full h-[48%] rounded-lg  transition-transform duration-300 hover:scale-105 overflow-hidden'>
                     <div className="absolute inset-0 bg-gradient-to-br from-stone-800 to-stone-900 z-10 opacity-50 rounded-lg transition-opacity duration-300 hover:opacity-70" />
                     <CardHeader className="absolute space-y-2 z-20 transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-105 hover:scale-105">
                     <div className="text-[0.55rem] text-stone-300 font-medium uppercase">Seamless Global Collaboration</div>
@@ -112,25 +112,25 @@ function BentoSection() {
                 </div>
             </div>
             {/* 2nd section */}
-            <div className='py-1 w-full h-[48%] border-red-400 flex flex-col-reverse md:flex-row justify-between items-center'>
+            <div className='py-1 w-full h-[48%] flex flex-col-reverse md:flex-row justify-between items-center gap-4 md:gap-0'>
                 {/*LEFT SECTION */}
-                <div className='w-full md:w-[34%] h-full flex flex-col justify-between items-center'>
+                <div className='w-full md:w-[34%] h-full flex flex-col justify-between items-center gap-4 md:gap-0'>
                     {/* BOX 4 */}
                     <div className='w-full h-[48%]'>
                         <Card className="cursor-pointer relative bg-gradient-to-br from-stone-900 via-stone-800 to-stone-700 text-white p-4 rounded-lg shadow-lg backdrop-blur-md w-full h-full overflow-hidden flex flex-col justify-between group transition-transform duration-300 ease-in-out hover:scale-105">
-                        <div className="relative z-10 text-center mb-2 transition duration-500 ease-in-out group-hover:translate-y-3 group-hover:scale-125">
-                            <h2 className="text-xl font-bold">Tech Enthusiast</h2>
-                            <p className="text-stone-200 text-sm">With a passion for development</p>
+                        <div className="relative z-10 text-center mb-2 transition duration-500 ease-in-out group-hover:translate-y-3 group-hover:scale-110">
+                            <h2 className="text-lg md:text-xl font-bold">Tech Enthusiast</h2>
+                            <p className="text-stone-200 text-xs md:text-sm">With a passion for development</p>
                         </div>
-                        <div className="relative z-10 mb-2 flex-grow flex flex-col justify-center items-center transition-transform duration-500 ease-in-out group-hover:blur-[3px] group-hover:z-0  group-hover:translate-y-[-20px]">
+                        <div className="relative z-10 mb-2 flex-grow flex flex-col justify-center items-center transition-transform duration-500 ease-in-out group-hover:blur-[3px] group-hover:z-0 group-hover:translate-y-[-20px]">
                             <div className="mt-3 p-1 border-2 border-dashed border-stone-400 rounded text-xs w-full text-center">
                             <div className="flex flex-col h-full bg-stone-800 text-white rounded">
                                 <div className="flex justify-between items-center bg-stone-700 p-2 rounded-t">
                                 <span className="text-[0.6rem] font-semibold">Code Life: Embrace the Journey</span>
                                 <div className="flex space-x-1">
-                                    <span className="w-3 h-3 bg-red-500 rounded-full"></span>
-                                    <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                                    <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+                                    <span className="w-2 h-2 md:w-3 md:h-3 bg-red-500 rounded-full"></span>
+                                    <span className="w-2 h-2 md:w-3 md:h-3 bg-yellow-500 rounded-full"></span>
+                                    <span className="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full"></span>
                                 </div>
                                 </div>
                                 <div className="flex flex-grow">
@@ -146,13 +146,10 @@ function BentoSection() {
                                     <div className="bg-stone-900 h-full border border-stone-600 rounded">
                                     <p className="text-[0.4rem] p-1 font-thin text-left">Editor</p>
                                     <div className="bg-stone-800 h-full p-2">
-                                        <p className="text-[0.3rem] text-stone-400">{`"Code is like humor. When you have to explain it, it’s bad." - Cory House`}</p>
+                                        <p className="text-[0.3rem] text-stone-400">{`"Code is like humor. When you have to explain it, it's bad." - Cory House`}</p>
                                     </div>
                                     </div>
                                 </div>
-                                </div>
-                                <div className="bg-stone-900 p-2 rounded-b">
-                                <p className="text-[0.5rem] font-thin">Terminal</p>
                                 </div>
                             </div>
                             </div>
@@ -163,16 +160,16 @@ function BentoSection() {
                     <div className='w-full h-[48%] relative'>
                         <Card className="w-full h-full flex flex-col justify-center items-center bg-gradient-to-br from-stone-900 via-stone-800 to-stone-700 bg-opacity-90 rounded-xl shadow-2xl backdrop-blur-lg text-white overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-3xl">
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-transparent to-purple-500 opacity-20 pointer-events-none"></div>
-                        <div className="absolute top-0 left-0 w-20 h-20 bg-blue-500 rounded-full opacity-30 blur-lg"></div>
-                        <div className="absolute bottom-0 right-0 w-32 h-32 bg-pink-500 rounded-full opacity-30 blur-lg"></div>
-                        <CardHeader className="w-full text-center py-3 relative z-10">
-                            <h2 className="text-lg font-bold">Build Greatness Together!</h2>
-                            <p className="text-[0.65rem] tracking-normal text-stone-300 mt-1">Collaborate, innovate, and achieve more.</p>
+                        <div className="absolute top-0 left-0 w-16 md:w-20 h-16 md:h-20 bg-blue-500 rounded-full opacity-30 blur-lg"></div>
+                        <div className="absolute bottom-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-pink-500 rounded-full opacity-30 blur-lg"></div>
+                        <CardHeader className="w-full text-center py-2 md:py-3 relative z-10">
+                            <h2 className="text-base md:text-lg font-bold">Build Greatness Together!</h2>
+                            <p className="text-[0.6rem] md:text-[0.65rem] tracking-normal text-stone-300 mt-1">Collaborate, innovate, and achieve more.</p>
                         </CardHeader>
                         <CardContent className="flex flex-col items-center justify-center relative z-10">
                             <Button
                             onClick={copyEmail}
-                            className="flex items-center justify-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-transform duration-300 transform hover:shadow-xl backdrop-blur-md bg-opacity-70"
+                            className="flex items-center justify-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white font-semibold py-2 md:py-3 px-3 md:px-4 rounded-lg transition-transform duration-300 transform hover:shadow-xl backdrop-blur-md bg-opacity-70 text-sm md:text-base"
                             style={{
                                 background: 'rgba(255, 255, 255, 0.1)',
                                 boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
@@ -181,7 +178,7 @@ function BentoSection() {
                                 border: '1px solid rgba(255, 255, 255, 0.3)'
                             }}
                             >
-                            <LucideClipboard className="w-6 h-6 mr-1" />
+                            <LucideClipboard className="w-4 h-4 md:w-6 md:h-6 mr-1" />
                             <span>{copied ? 'Email Copied!' : 'Copy Email'}</span>
                             </Button>
                         </CardContent>
@@ -189,7 +186,7 @@ function BentoSection() {
                     </div>
                 </div>
                 {/* RIGHT SECTION BOX 6*/}
-                <div className='w-full md:w-[64%] h-full'>
+                <div className='w-full md:w-[64%] h-full hidden md:flex'>
                     <Card className="cursor-pointer w-full h-full overflow-hidden bg-gradient-to-br from-stone-900 via-stone-800 to-stone-700 bg-opacity-90 border-0 text-white rounded-lg shadow-xl transform transition-transform duration-300 group hover:scale-105">
                         <div className="relative grid md:grid-cols-2 gap-4 p-4">
                         <CardHeader className="space-y-2 z-20 transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-105">

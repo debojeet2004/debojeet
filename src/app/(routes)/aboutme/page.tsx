@@ -13,7 +13,7 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="min-h-screen text-zinc-400">
+    <div className="min-h-screen text-zinc-400 ">
       <div className="max-w-3xl mx-auto px-4 py-16 space-y-16">
         {/* Header Section */}
         <motion.div
