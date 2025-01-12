@@ -12,7 +12,7 @@ import {projectsData} from "./data/projectData";
 export default function ProjectPage() {
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8">
+    <div className="max-w-5xl mx-auto px-4 mt-[2rem] md:mt-[4rem]">
       <div className="flex flex-col gap-6">
         {/* Header */}
         <motion.div

@@ -64,17 +64,17 @@ export function NavMain({
                     <span>{item.title}</span>
                   </Link>
                 ) : (
-                  <Link href={item.url}>
+                    <Link href={item.url} target={(item.title === "Instagram" || item.title === "LinkedIn" || item.title === "Twitter") ? "_blank" : undefined}>
                     <div className="flex items-center justify-between w-full">
                       <div className="flex items-center gap-2">
-                        {item.icon && <item.icon size={16} />}
-                        <span>{item.title}</span>
+                      {item.icon && <item.icon size={16} />}
+                      <span>{item.title}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <PiShareDuotone />
+                      <PiShareDuotone />
                       </div>
                     </div>
-                  </Link>
+                    </Link>
                 )}
               </SidebarMenuButton>
             </SidebarMenuItem>

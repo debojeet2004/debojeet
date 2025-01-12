@@ -2,7 +2,7 @@ import { EducationCard } from "../_components/educationCard";
 import {educationHistory} from "./educationData";
 export default function EducationPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
+    <div className="max-w-5xl mx-auto px-4 mt-[2rem] md:mt-[4rem]">
       <h1 className="text-5xl font-bold mb-8">Education</h1>
       <div className="space-y-6">
         {educationHistory.map((education, index) => (

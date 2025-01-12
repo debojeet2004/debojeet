@@ -14,7 +14,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen text-zinc-400 ">
-      <div className="max-w-3xl mx-auto px-4 py-16 space-y-16">
+      <div className="max-w-4xl mx-auto px-4 mt-[2rem] md:mt-[4rem] space-y-16">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,7 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-6xl font-thin text-white mb-8">About Me</h1>
-            <p className="text-lg leading-relaxed text-justify">
+            <p className="text-md sm:text-base lg:text-lg leading-relaxed text-justify">
             In the digital realm where dreams take flight,
             A seeker of knowledge, coding day and night.
             From AI&apos;s depths to ML&apos;s embrace,
@@ -44,7 +44,7 @@ export default function AboutPage() {
           <Image
             src="/debojeet.jpg"
             alt="Profile"
-            width={800}
+            width={900}
             height={440}
             className="object-cover border"
           />
@@ -57,13 +57,13 @@ export default function AboutPage() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="space-y-6"
         >
-          <p className="text-lg leading-relaxed text-justify">
-          I&apos;m Debojeet Karmakar, a Computer Science student with a specialization in Artificial Intelligence and Machine Learning. I&apos;m passionate about technology and its potential to shape the future. I&apos;m particularly drawn to the intersection of technology and design, and I enjoy the process of designing, developing, and bringing innovative digital experiences to life. I&apos;m a UI/UX Designer and a Full-stack Developer, constantly seeking to enhance my skills and explore new technologies.
-          </p>
-          <p className="text-lg leading-relaxed text-justify">
-          My journey in higher education has been a period of significant personal and academic growth. I&apos;ve embraced challenges, sought out new experiences, and developed a strong work ethic. I&apos;m driven to succeed in my academic pursuits and build a meaningful career in the tech industry.<br/><br/>
-          I&apos;m a proactive and results-oriented individual with a strong desire to learn and grow. I&apos;m eager to contribute my skills and knowledge to impactful projects and make a positive impact on the world.
-          </p>
+            <p className="text-md sm:text-lg leading-relaxed text-justify">
+            I&apos;m Debojeet Karmakar, a Computer Science student with a specialization in Artificial Intelligence and Machine Learning. I&apos;m passionate about technology and its potential to shape the future. I&apos;m particularly drawn to the intersection of technology and design, and I enjoy the process of designing, developing, and bringing innovative digital experiences to life. I&apos;m a UI/UX Designer and a Full-stack Developer, constantly seeking to enhance my skills and explore new technologies.
+            </p>
+            <p className="text-md sm:text-lg leading-relaxed text-justify mt-4">
+            My journey in higher education has been a period of significant personal and academic growth. I&apos;ve embraced challenges, sought out new experiences, and developed a strong work ethic. I&apos;m driven to succeed in my academic pursuits and build a meaningful career in the tech industry.<br/><br/>
+            I&apos;m a proactive and results-oriented individual with a strong desire to learn and grow. I&apos;m eager to contribute my skills and knowledge to impactful projects and make a positive impact on the world.
+            </p>
         </motion.div>
 
         {/* Thoughts Section */}

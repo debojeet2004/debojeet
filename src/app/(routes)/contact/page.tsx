@@ -52,7 +52,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className=" mx-auto px-4 pt-16 max-w-4xl">
+    <div className=" mx-auto px-4 mt-[2rem] md:mt-[4rem] max-w-4xl">
       <div className="space-y-8">
       <motion.div 
           initial={{ opacity: 0, y: 20 }}

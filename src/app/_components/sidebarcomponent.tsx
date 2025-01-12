@@ -103,7 +103,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       {
         type: "normal" as const,
         title: "Instagram",
-        url: "/instagram",
+        url: "https://www.instagram.com/debojeet_2004/",
         icon: Instagram,
         isActive: true,
         isFocused: pathname.split("/").pop() === "instagram",
@@ -112,7 +112,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       {
         type: "normal" as const,
         title: "LinkedIn",
-        url: "/linkedin",
+        url: "https://www.linkedin.com/in/debojeet-karmakar-852820210/",
         icon: Linkedin,
         isActive: true,
         isFocused: pathname.split("/").pop() === "linkedin",
@@ -121,7 +121,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       {
         type: "normal" as const,
         title: "Twitter",
-        url: "/twitter",
+        url: "https://x.com/debojeet2004",
         icon: FaXTwitter,
         isActive: true,
         isFocused: pathname.split("/").pop() === "twitter",

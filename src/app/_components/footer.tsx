@@ -26,11 +26,11 @@ export default function Footer() {
     ]
 
     const socialLinks: SocialLink[] = [
-        [FaGithub, 'GitHub', 'https://github.com/DebojeetKarmakar'],
-        [FaLinkedin, 'LinkedIn', 'https://linkedin.com'],
-        [FaXTwitter, 'Twitter', 'https://twitter.com'],
-        [FaInstagram, 'Instagram', 'https://instagram.com/debojeetkarmakar'],
-        [FaYoutube, 'Youtube', 'https://youtube.com/@debojeetkarmakar']
+        [FaGithub, 'GitHub', 'https://github.com/debojeet2004'],
+        [FaLinkedin, 'LinkedIn', 'https://www.linkedin.com/in/debojeet-karmakar-852820210/'],
+        [FaXTwitter, 'Twitter', 'https://x.com/debojeet2004'],
+        [FaInstagram, 'Instagram', 'https://www.instagram.com/debojeet_2004/'],
+        [FaYoutube, 'Youtube', 'https://www.youtube.com/@LearningPurpose_dev']
     ]
 
 
@@ -168,7 +168,7 @@ export default function Footer() {
                 </div>
 
                 {/* Creative time display */}
-                <div className="mt-16 mb-16 max-w-5xl mx-auto px-4 sm:px-6">
+                <div className="mt-16 mb-16 w-full md:min-w-5xl mx-auto px-4 sm:px-6">
                     <div className="w-full bg-gradient-to-br from-stone-900/50 to-stone-800/30 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-stone-800 hover:border-stone-600 transition-all duration-500 group hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.1)]">
                         <div className="relative">                            
                             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">

@@ -11,7 +11,7 @@ export default function ProjectDetails({ project }: { project: ProjectDetailsPro
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-5xl mx-auto px-4 py-8"
+            className="max-w-5xl mx-auto px-4 mt-[2rem] md:mt-[4rem]"
         >
             <ProjectHeader
                 name={project.title}

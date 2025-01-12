@@ -11,12 +11,11 @@ export function Blogposts({ blogpost }: { blogpost: BlogPostProps }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="max-w-5xl mx-auto px-4 py-8"
+      className="max-w-5xl mx-auto px-4 mt-[2rem] md:mt-[4rem]"
     >
       {/* Header */}
       <div className="space-y-6 mb-12">
-        <div className="relative w-full mb-12 rounded-lg overflow-hidden bg-gray-200/20 h-[200px]" />
-
+        <div className="relative w-full mb-12 rounded-lg overflow-hidden bg-gradient-to-br from-stone-700 via-blue-900 to-stone-900 h-[80px] md:h-[200px]"/>
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
           {blogpost.title}
         </h1>
@@ -56,21 +55,22 @@ export function Blogposts({ blogpost }: { blogpost: BlogPostProps }) {
             {blogpost.content.map((content, index) => (
             <div key={index} className="space-y-8 mb-12">
               {content.img1 && (
-              <div className="relative w-full min-h-[700px] rounded-lg overflow-hidden">
+                <div className="relative w-full min-h-[300px] md:min-h-[500px] lg:min-h-[700px] rounded-lg overflow-hidden">
                 <Image
                 src={content.img1}
                 alt={blogpost.title}
                 fill
                 className="object-cover"
                 priority={index === 0}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
                 />
-              </div>
+                </div>
               )}
               <div className="space-y-4 text-lg leading-relaxed">
               <p className="text-gray-800 dark:text-gray-200">{content.paragraph}</p>
               </div>
               {content.img2 && (
-              <div className="relative w-full min-h-[700px] rounded-lg overflow-hidden">
+              <div className="relative w-full min-h-[300px] md:min-h-[500px] lg:min-h-[700px] rounded-lg overflow-hidden">
                 <Image
                 src={content.img2}
                 alt={blogpost.title}

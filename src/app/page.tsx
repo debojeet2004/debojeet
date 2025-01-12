@@ -3,6 +3,7 @@ import React from 'react'
 import Footer from './_components/footer'
 import AnimatedShinyText from '@/components/ui/AnimatedShinyText'
 import { cn } from '@/lib/utils'
+import { motion } from 'framer-motion';
 // import { AnimatedTestimonials } from '@/components/ui/animated-testimonials'
 import BentoSection from './_components/bentoSection';
 import { ArrowRightIcon } from 'lucide-react'
@@ -105,33 +106,44 @@ export default function Page() {
 
   return (
     <>
-      <div className ='max-w-5xl mx-auto mt-20 md:mt-36 flex flex-col justify-center items-center overflow-x-hidden'>
-        {/* <SidebarTrigger className="-ml-1" /> */}
-        <div className='px-4 mx-auto flex flex-col justify-center items-center'>
-          <div className={cn("group rounded-full border border-black/10 bg-white/10 backdrop-blur-md text-sm sm:text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-white/20 dark:border-white/10 dark:bg-stone-700/10 dark:hover:bg-stone-700/20",)}>
-            <AnimatedShinyText className="inline-flex items-center justify-center px-3 sm:px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400 bg-white/10 backdrop-blur-lg rounded-full shadow-lg">
-              <span className='text-xs sm:text-sm'>🙏 नमस्ते, आपका स्वागत है </span>
-              <ArrowRightIcon className="ml-1 size-3 sm:size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-            </AnimatedShinyText>
-          </div>
-          <p className='text-3xl sm:text-5xl md:text-7xl mt-4 text-center'>
-            Transforming <span className='underline underline-offset-8 decoration-red-500/50 decoration-4 italic'>concepts</span>
-          </p>
-          <p className='text-3xl sm:text-5xl md:text-7xl mt-4 sm:mt-6 text-center'>
-            Into <span className='italic bg-stone-700/60 py-[0.1rem] px-2 sm:px-3 rounded-lg'>Seamless Realities</span> 
-          </p>
-          <p className='mt-4 sm:mt-6 text-sm sm:text-md text-center tracking-wide px-2'>
-            Hi, I am <span className='text-red-200'>Debojeet Karmakar</span> a Fullstack developer and a UI Designer
-          </p>
-        </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="max-w-5xl mx-auto mt-20 md:mt-36 flex flex-col justify-center items-center overflow-hidden"
+        >
+            <div className='px-4 mx-auto flex flex-col justify-center items-center'>
+              <div className={cn("group rounded-full border border-black/10 bg-white/10 backdrop-blur-md text-sm sm:text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-white/20 dark:border-white/10 dark:bg-stone-700/10 dark:hover:bg-stone-700/20",)}>
+                <AnimatedShinyText className="inline-flex items-center justify-center px-3 sm:px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400 bg-white/10 backdrop-blur-lg rounded-full shadow-lg">
+                  <span className='text-xs sm:text-sm'>🙏 नमस्ते, आपका स्वागत है </span>
+                  <ArrowRightIcon className="ml-1 size-3 sm:size-4 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+                </AnimatedShinyText>
+              </div>
+              <p className='text-3xl sm:text-5xl md:text-7xl mt-4 text-center'>
+                Transforming <span className='underline underline-offset-8 decoration-red-500/50 decoration-4 italic'>concepts</span>
+              </p>
+              <p className='text-3xl sm:text-5xl md:text-7xl mt-4 sm:mt-6 text-center'>
+                Into <span className='italic bg-stone-700/60 py-[0.1rem] px-2 sm:px-3 rounded-lg'>Seamless Realities</span> 
+              </p>
+              <p className='mt-4 sm:mt-6 text-sm sm:text-md text-center tracking-wide px-2'>
+                Hi, I am <span className='text-red-200'>Debojeet Karmakar</span> a Fullstack developer and a UI Designer
+              </p>
+            </div>
         {/* bento section */}
-        <BentoSection />
-        
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="w-full overflow-x-hidden">
+          
+        <BentoSection />        
+          </motion.div>
         {/* testimonials */}
         {/* <AnimatedTestimonials testimonials={testimonials}/> */}
-      </div>
+        </motion.div>
       <Footer />
+      
     </>
   )
 };
