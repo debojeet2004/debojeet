@@ -108,6 +108,7 @@ export default function BlogsPage() {
                       alt={blog.title}
                       width={200}
                       height={180}
+                      priority
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                     />
                   )}

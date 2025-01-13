@@ -30,7 +30,7 @@ import { usePathname } from "next/navigation"
 export const AppSidebar = React.memo(function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname()
 
-  const navigationData = React.useMemo(() => ({
+  const navigationData = {
     portfolio: [
       {
         type: "normal" as const,
@@ -128,8 +128,7 @@ export const AppSidebar = React.memo(function AppSidebar({ ...props }: React.Com
         social: true
       },
     ]
-  }),[pathname])
-
+  }
 
   return (
     <Sidebar collapsible="icon" {...props} >

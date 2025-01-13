@@ -67,7 +67,7 @@ export function Blogposts({ blogpost }: { blogpost: BlogPostProps }) {
                 </div>
               )}
               <div className="space-y-4 text-lg leading-relaxed">
-              <p className="text-gray-800 dark:text-gray-200">{content.paragraph}</p>
+                <p className="text-sm md:text-lg text-gray-800 dark:text-gray-200 text-justify">{content.paragraph}</p>
               </div>
               {content.img2 && (
               <div className="relative w-full min-h-[300px] md:min-h-[500px] lg:min-h-[700px] rounded-lg overflow-hidden">

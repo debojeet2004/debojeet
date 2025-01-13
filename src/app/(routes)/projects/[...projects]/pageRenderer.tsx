@@ -13,11 +13,11 @@ export default function ProjectPageRenderer() {
         // Safely extract the slug from the dynamic route
         if (params.projects && params.projects.length > 0) {
             const slug = params.projects[params.projects.length - 1];
-            console.log(slug)
+            // console.log(slug)
 
             // Find the corresponding project
             const foundProject = projectsData.find(proj => proj.slug === slug);
-            console.log(foundProject)
+            // console.log(foundProject)
 
             // Update state
             setProject(foundProject || null);
