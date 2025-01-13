@@ -27,10 +27,10 @@ import { usePathname } from "next/navigation"
 
 
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export const AppSidebar = React.memo(function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname()
 
-  const navigationData = {
+  const navigationData = React.useMemo(() => ({
     portfolio: [
       {
         type: "normal" as const,
@@ -38,7 +38,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         url: "/",
         icon: LayoutDashboard,
         isActive: true,
-        isFocused: pathname.split("/").pop() === "",
+        isFocused: pathname === "/",
       },
       {
         type: "normal" as const,
@@ -128,7 +128,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         social: true
       },
     ]
-  }
+  }),[pathname])
 
 
   return (
@@ -149,4 +149,4 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarRail />
     </Sidebar>  
   )
-}
+})

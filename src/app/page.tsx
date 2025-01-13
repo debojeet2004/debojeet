@@ -1,17 +1,16 @@
 "use client";
-import React from 'react'
-import Footer from './_components/footer'
 import AnimatedShinyText from '@/components/ui/AnimatedShinyText'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion';
-// import { AnimatedTestimonials } from '@/components/ui/animated-testimonials'
-import BentoSection from './_components/bentoSection';
 import { ArrowRightIcon } from 'lucide-react'
+// import { AnimatedTestimonials } from '@/components/ui/animated-testimonials'
 // import { ArrowRight } from 'lucide-react'
 // import { Button } from '@/components/ui/button'
 // import { motion } from 'framer-motion'
 // import Image from 'next/image'
 // import Link from 'next/link';
+import dynamic from 'next/dynamic'
+import React, { Suspense } from 'react'
 
 
 // const testimonials = [
@@ -102,6 +101,12 @@ import { ArrowRightIcon } from 'lucide-react'
 //   },
 // ]
 
+const Footer = dynamic(() => import('./_components/footer'), { ssr: false })
+const BentoSection = dynamic(() => import('./_components/bentoSection'), { 
+  ssr: false,
+  loading: () => <div></div>
+})
+
 export default function Page() {
 
   return (
@@ -131,14 +136,19 @@ export default function Page() {
               </p>
             </div>
         {/* bento section */}
-        <motion.div
+
+        <Suspense fallback={<div></div>}>
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full overflow-x-hidden">
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="w-full overflow-x-hidden">
+            
+            <BentoSection />        
           
-        <BentoSection />        
           </motion.div>
+        </Suspense>
+        
         {/* testimonials */}
         {/* <AnimatedTestimonials testimonials={testimonials}/> */}
         </motion.div>
