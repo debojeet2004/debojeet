@@ -1,15 +1,13 @@
 "use client";
-    import React, { useState, lazy, Suspense } from 'react';
+    import React, { useState, Suspense } from 'react';
     import { LucideClipboard } from 'lucide-react';
-    // import { cn } from '@/lib/utils';
     import { Marquee } from "@/components/ui/Marquee";
     import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
     import { Button } from '@/components/ui/button';
     import Image from 'next/image';
     import { ReviewCard } from './reviewCard';
     
-    // Lazy load WorldMapDemo
-    const WorldMapDemo = lazy(() => import('./worldmapdemo').then(mod => ({ default: mod.WorldMapDemo })));
+
     
     const reviews = [
         { id: 1, body: "React" },
@@ -45,7 +43,7 @@
                         <div className='relative w-full h-full' style={{ minHeight: '400px' }}>
                             <div className="absolute inset-0 bg-gradient-to-br from-stone-950 via-stone-800 to-stone-950 z-10 opacity-80 rounded-lg will-change-opacity transition-opacity duration-300 group-hover:opacity-70" />
                             <Image 
-                                src='/codingman.png' 
+                                src={'https://xclbyllpejfphiformqq.supabase.co/storage/v1/object/sign/portfolio_storage_bucket/portfolio%20images/codingman2.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwb3J0Zm9saW9fc3RvcmFnZV9idWNrZXQvcG9ydGZvbGlvIGltYWdlcy9jb2RpbmdtYW4yLnBuZyIsImlhdCI6MTczNzI3MzcxOCwiZXhwIjoyMDUyNjMzNzE4fQ.t2WlGc83KNIPXy6I6wZc_UkOPgV6UrckDY0KazpDB7k&t=2025-01-19T08%3A01%3A58.656Z'} 
                                 alt='A Developer at Work' 
                                 width={800}
                                 height={600}
@@ -81,7 +79,14 @@
                                 </div>
                             </CardHeader>
                             <Suspense fallback={<div className="w-full h-full bg-stone-800 animate-pulse" />}>
-                                <WorldMapDemo />
+                                <Image 
+                                    src={'https://xclbyllpejfphiformqq.supabase.co/storage/v1/object/sign/portfolio_storage_bucket/portfolio%20images/worldMap.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwb3J0Zm9saW9fc3RvcmFnZV9idWNrZXQvcG9ydGZvbGlvIGltYWdlcy93b3JsZE1hcC5qcGVnIiwiaWF0IjoxNzM3Mjc0Nzc1LCJleHAiOjIwNTI2MzQ3NzV9.tptwHIz8VKGZTYHOJ6tHTUY7cr8mcvJzdyNIw3UlPHk&t=2025-01-19T08%3A19%3A35.344Z'}
+                                    alt='A Developer at Work' 
+                                    width={800}
+                                    height={600}
+                                    priority
+                                    className='object-cover w-full h-full rounded-xl will-change-transform transition-transform duration-500 blur-[1px] group-hover:blur-none scale-110 group-hover:scale-125'
+                                />
                             </Suspense>
                         </div>
                         {/* BOX 3 */}
