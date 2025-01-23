@@ -10,7 +10,9 @@ import {
   Linkedin,
   FileText,
   LayoutDashboard,
-  Handshake
+  Handshake,
+  Wrench,
+  Telescope
 } from "lucide-react"
 import { FaXTwitter } from "react-icons/fa6";
 import {
@@ -91,15 +93,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       },
     ],
     contact: [
-      {
-        type: "normal" as const,
-        title: "Contact",
-        url: "/contact",
-        icon: Handshake,
-        isActive: true,
-        isFocused: pathname.split("/").pop() === "contact",
-        social: false
-      },
+      // {
+      //   type: "normal" as const,
+      //   title: "Contact",
+      //   url: "/contact",
+      //   icon: Handshake,
+      //   isActive: true,
+      //   isFocused: pathname.split("/").pop() === "contact",
+      //   social: false
+      // },
       {
         type: "normal" as const,
         title: "Instagram",
