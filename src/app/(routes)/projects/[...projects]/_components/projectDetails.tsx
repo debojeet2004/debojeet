@@ -50,7 +50,7 @@ export default function ProjectDetails({ project }: { project: ProjectDetailsPro
             {/* Project Description */}
             <div className="mb-12">
                 <h2 className="text-2xl font-semibold mb-4">About the Project</h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed  text-justify">
                     {project.description}
                 </p>
             </div>
@@ -62,21 +62,21 @@ export default function ProjectDetails({ project }: { project: ProjectDetailsPro
                 <div className="space-y-6">
                     <div>
                         <h3 className="text-xl font-medium mb-2">The Challenge</h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground  text-justify">
                             {project.caseStudy.challenge}
                         </p>
                     </div>
 
                     <div>
                         <h3 className="text-xl font-medium mb-2">The Solution</h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground  text-justify">
                             {project.caseStudy.solution}
                         </p>
                     </div>
 
                     <div>
                         <h3 className="text-xl font-medium mb-2">The Outcome</h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground  text-justify">
                             {project.caseStudy.outcome}
                         </p>
                     </div>

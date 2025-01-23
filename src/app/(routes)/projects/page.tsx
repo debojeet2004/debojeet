@@ -1,15 +1,35 @@
 "use client"
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Calendar } from "lucide-react"
+import { Calendar, Search } from "lucide-react"
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {projectsData} from "./data/projectData";
+import { Input } from '@/components/ui/input'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+
+const PREDEFINED_CATEGORIES = [
+  'Development', 
+  'Design', 
+]
 
 export default function ProjectPage() {
+
+  const [searchQuery, setSearchQuery] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("all")
+  // Get unique categories
+  const existingCategories = [...new Set(projectsData.map(project => project.category))]
+  // Filter projects based on search query and selected category
+  const filteredProjects = projectsData.filter(project => 
+    // Filter by search query
+    (project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    project.description.toLowerCase().includes(searchQuery.toLowerCase())) &&
+    // Filter by category (if selected)
+    (selectedCategory === "all" || project.category === selectedCategory)
+  )
 
   return (
     <div className="max-w-5xl mx-auto px-4 mt-[2rem] md:mt-[4rem]">
@@ -24,9 +44,50 @@ export default function ProjectPage() {
           <h1 className="text-5xl font-thin tracking-tight">Projects</h1>
           <p className="text-muted-foreground">Explore my projects for a glimpse into my creative endeavors and technical pursuits.</p>
         </motion.div>
+
+         {/* Search and Filter */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="space-y-2 flex items-center gap-4 w-full"
+        >
+          <div className="relative flex-grow">
+            <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Input
+              placeholder="Search Projects..."
+              className="pl-10 w-full"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+
+          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Select Category" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Categories</SelectItem>
+              {PREDEFINED_CATEGORIES.map((category) => (
+                <SelectItem
+                  key={category}
+                  value={category}
+                  disabled={!existingCategories.includes(category)}
+                >
+                  {category}{" "}
+                  <span className="italic text-[0.5rem]">
+                    {!existingCategories.includes(category) ? "No data" : ""}
+                  </span>
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </motion.div>
+
+
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2  gap-6">
-          {projectsData.map((Project) => (
+          {filteredProjects.map((Project) => (
             <motion.div 
               key={Project.id} 
               initial={{ opacity: 0, y: 20 }}
